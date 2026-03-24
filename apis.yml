@@ -1,0 +1,7 @@
+aid: genesis-energy
+url: https://raw.githubusercontent.com/api-evangelist/genesis-energy/refs/heads/main/apis.yml
+modified: '2026-03-24'
+apis: []
+common:
+  - type: Website
+    url: https://www.genesis-energy.com
