@@ -19,6 +19,8 @@ url: >-
 specificationVersion: '0.19'
 apis: []
 common:
+  - type: GitHubOrganization
+    url: https://github.com/genesis-energy
   - type: Website
     url: https://www.genesis-energy.com
 maintainers:
