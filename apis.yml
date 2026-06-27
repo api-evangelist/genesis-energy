@@ -23,7 +23,7 @@ common:
     url: https://github.com/genesis-energy
   - type: Website
     url: https://www.genesis-energy.com
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://genesis-energy.com/llms.txt
 maintainers:
   - FN: Kin Lane
