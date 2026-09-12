@@ -1,0 +1,77 @@
+generated: '2026-09-12'
+method: probed
+source: >-
+  https://gas.genlp.com/GNP_PRD_IPWS/ — the FERC informational posting website Genesis
+  Energy, L.P. operates for High Island Offshore System, L.L.C. (TSP 30020), plus the
+  location dataset it serves anonymously.
+note: >-
+  Genesis Energy, L.P. publishes no OpenAPI, AsyncAPI, GraphQL SDL or any other developer
+  contract, so none of the usual cross-cutting web-API conformances (oauth2, oidc,
+  rfc9457, json:api, pagination, idempotency) can be asserted — there is no surface to
+  assert them about. What the company DOES publish is a regulated, machine-readable
+  bulk-data surface mandated by FERC, and that is what this file records.
+
+conformance: []
+
+domain_standard:
+  market: Interstate natural gas transmission (US midstream)
+  entries:
+    - id: ferc-order-587-naesb-wgq-informational-postings
+      label: FERC Order No. 587 / NAESB WGQ informational postings
+      conforms: true
+      confidence: high
+      evidence:
+        - url: https://gas.genlp.com/GNP_PRD_IPWS/?tspno=30020
+          http_status: 200
+          note: >-
+            "HIGH ISLAND OFFSHORE SYSTEM LLC: Informational Posting Website" — the
+            standard FERC informational-posting section set is present and linked from
+            the landing page: Operationally Available Capacity, Unsubscribed Capacity,
+            Index of Customers, Locations, Critical/Non-Critical Notices, Planned Service
+            Outage, Request to Purchase Releasable Capacity, Posted Imbalances,
+            Transactional Reporting (Firm / Interruptible / Capacity Release), Gas
+            Quality, Standards of Conduct and the entire tariff.
+        - url: >-
+            https://gas.genlp.com/GNP_PRD_IPWS/IPWSFile/IPWSFileHandler?path=%5CTSP_30020%5C&fileName=Locations%2FLOCATIONDATA.CSV&d=True
+          http_status: 200
+          content_type: application/octet-stream
+          bytes: 12491
+          note: >-
+            Anonymous, no-credential CSV download whose header row is the NAESB WGQ
+            informational-postings location data element set, fetched verbatim on
+            2026-09-12: "LOC NAME,LOC,LOC ST ABBREV,LOC STATE,LOC CNTY ABBREV,LOC
+            COUNTY,LOC ZN ABBREV,LOC ZONE,LOC TYPE IND,LOC TYPE,DIR FLO,LOC STAT
+            IND,EFF DATE,INACT DATE,UP/DN IND,UP/DN NAME,UP/DN ID,UP/DN ID PROP,UP/DN
+            LOC NAME,UP/DN LOC,UP/DN FERC CID IND,UP/DN FERC CID,TSP NAME,TSP,TSP
+            PROP,TSP FERC CID,UPDATE D/T". TSP and FERC CID identifiers are populated
+            (TSP 30020, TSP FERC CID 87740031).
+      caveat: >-
+        This is a regulated posting obligation discharged as downloadable files and
+        server-rendered HTML grids, NOT a developer API. There is no published request
+        contract, no versioning, no authentication scheme and no support channel for
+        programmatic consumers. Recorded because it is a real, first-party,
+        machine-readable, anonymously-reachable surface in this company's market — not
+        because it substitutes for an API.
+    - id: naesb-wgq-edm
+      label: NAESB WGQ Electronic Delivery Mechanism (EDM)
+      conforms: unknown
+      confidence: low
+      evidence:
+        - url: https://quorum.genlp.com/
+          http_status: 404
+          note: >-
+            The IPWS links "Customer Activities" to quorum.genlp.com, the gated
+            nomination / capacity-release system. The host is Cloudflare-fronted and
+            returns an empty HTTP 404 for every path including the root, so no
+            application entry point, no discovery document and no EDM endpoint could be
+            observed anonymously. Whether Genesis operates a NAESB WGQ EDM interface
+            behind it is NOT established here and is not asserted.
+
+regime_note: >-
+  The apis.io `energy_utilities` regulatory regime matched this provider via tags and its
+  standards[] shortlist is retail/consumer-energy shaped (green-button, espi, cds-energy,
+  cds-common, smart-energy-code, ieee-2030-5, openadr). None of those apply to an
+  interstate natural gas transmission MLP. The binding US regime for this surface is FERC
+  Order No. 587 with the NAESB WGQ standards it incorporates (the map currently names only
+  FERC Order 889 / OASIS, which governs electric transmission). Recorded as an observation
+  for rubric evolution; nothing here was stretched to fit the existing shortlist.

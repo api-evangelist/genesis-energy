@@ -1,9 +1,16 @@
 aid: genesis-energy
 name: Genesis Energy
 description: >-
-  Genesis Energy is a diversified midstream energy master limited partnership
-  with a focus on providing services to refineries, crude oil and natural gas
-  producers, and industrial and commercial enterprises.
+  Genesis Energy, L.P. (NYSE: GEL) is a diversified midstream energy master limited
+  partnership headquartered in Houston, Texas. It operates offshore crude oil and natural
+  gas pipelines and platforms in the Gulf of Mexico, onshore pipelines and terminals,
+  marine transportation for refined products and crude, and a sulfur services and soda ash
+  (alkali) chemicals business serving refineries, producers, and industrial and commercial
+  customers. It is a pipeline and chemicals operator, not a software vendor: it publishes
+  no developer program, no API and no machine-readable API contract. Its only public
+  machine-readable surface is the FERC-mandated informational posting website it runs for
+  its interstate natural gas pipeline, which serves NAESB WGQ-shaped location and capacity
+  data as anonymous file downloads.
 type: Index
 deliveryModel:
   model: unknown
@@ -30,25 +37,90 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/genesis-energy.png
 access: 3rd-Party
 created: '2026-03-24'
-modified: '2026-04-28'
+modified: '2026-09-12'
 position: Consuming
 tags:
   - Energy
   - Midstream
   - Oil and Gas
+  - Pipelines
+  - Natural Gas
+  - Crude Oil
+  - Marine Transportation
+  - Soda Ash
 url: >-
   https://raw.githubusercontent.com/api-evangelist/genesis-energy/refs/heads/main/apis.yml
 specificationVersion: '0.23'
 apis: []
 common:
+  - type: Website
+    url: https://www.genesisenergy.com
+  - type: Support
+    url: https://www.genesisenergy.com/contact
+  - type: PrivacyPolicy
+    url: https://www.genesisenergy.com/privacy-policy
+  - type: TermsOfService
+    url: https://www.genesisenergy.com/terms-and-conditions
   - type: DomainSecurity
     url: security/genesis-energy-domain-security.yml
-  - type: GitHubOrganization
-    url: https://github.com/genesis-energy
-  - type: Website
-    url: https://www.genesis-energy.com
-  - type: LlmsText
-    url: https://genesis-energy.com/llms.txt
+  - type: Conformance
+    url: conformance/genesis-energy-conformance.yml
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-enrichment:
+  date: '2026-09-12'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v3
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Genesis Energy, L.P. is a Gulf of Mexico pipeline, marine transportation and soda ash
+    operator with no developer program; the only machine-readable thing it publishes is a
+    FERC informational posting website at gas.genlp.com serving NAESB WGQ location data as
+    a CSV download, and its "Customer Activities" system at quorum.genlp.com answers an
+    empty 404 on every anonymous path.
+  evidence:
+    - url: https://www.genesisenergy.com/openapi.json
+      status: 404
+    - url: https://www.genesisenergy.com/.well-known/api-catalog
+      status: 404
+    - url: https://gas.genlp.com/GNP_PRD_IPWS/IPWSFile/IPWSFileHandler?path=%5CTSP_30020%5C&fileName=Locations%2FLOCATIONDATA.CSV&d=True
+      status: 200
+    - url: https://quorum.genlp.com/
+      status: 404
+  checked: '2026-09-12'
+x-identity-corrections:
+  date: '2026-09-12'
+  website:
+    field: common[].Website
+    was: https://www.genesis-energy.com
+    now: https://www.genesisenergy.com
+    basis: >-
+      genesis-energy.com (hyphenated) is a PARKED DOMAIN, not Genesis Energy, L.P. It
+      returns HTTP 200 with a 114-byte lander-redirect for every path, including a
+      negative-control path that cannot exist. The company's own site is
+      www.genesisenergy.com — title "A World-Class Midstream Services Provider | Genesis
+      Energy", matching this record's description — and www.genlp.com (the L.P.'s
+      corporate domain) 301s to it.
+  github_organization:
+    field: common[].GitHubOrganization
+    was: https://github.com/genesis-energy
+    now: removed
+    basis: >-
+      The github.com/genesis-energy organization belongs to Genesis Energy Limited, the
+      New Zealand electricity and gas retailer — api.github.com/orgs/genesis-energy
+      reports blog https://www.genesisenergy.co.nz/, location "New Zealand", and 0 public
+      repositories. Wrong company; there is no GitHub organization for the US midstream
+      MLP. github.com/genesisenergy returns 404.
+  llms_text:
+    field: common[].LlmsText
+    was: https://genesis-energy.com/llms.txt
+    now: removed
+    basis: >-
+      Same parked domain. The "200 text/plain 65 bytes" recorded on 2026-08-17 was the
+      parking service's robots.txt route, and the same host answers 200 for
+      /.well-known/genesis-energy-negative-control-7f3ab91c.json. The real host 404s
+      /llms.txt. See llms/genesis-energy-llms-probe.yml.

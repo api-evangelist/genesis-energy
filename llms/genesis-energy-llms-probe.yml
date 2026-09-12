@@ -8,13 +8,33 @@
 #
 # Same posture as the well-known probe artifacts: a recorded absence is a valid
 # measurement. Do not delete this to 'clean up' — deleting it restores the bug.
+#
+# CORRECTED 2026-09-12: the 2026-08-17 probe was run against genesis-energy.com,
+# which is a PARKED DOMAIN, not Genesis Energy, L.P. Its 200/text-plain/65-byte
+# "hit" was the parking service's robots.txt route, and the same host answers 200
+# for a negative-control path that cannot exist. The real company host is
+# www.genesisenergy.com (no hyphen), which 404s /llms.txt.
 llms:
-  probed: '2026-08-17'
-  url: https://genesis-energy.com/llms.txt
-  verdict: not-llms
+  probed: '2026-09-12'
+  url: https://www.genesisenergy.com/llms.txt
+  verdict: absent
   published: false
-  http_status: 200
-  content_type: text/plain
-  bytes: 65
+  http_status: 404
+  content_type: text/html; charset=UTF-8
+  bytes: 195
   note: >-
-    Fetched, but the body carries no llms.txt structure (no '#' or '>' headings).
+    Genesis Energy, L.P. publishes no llms.txt. No llms.txt was generated for this
+    provider either: the company has no API, no developer portal and no documented
+    operations to describe, so a generated file would carry nothing an agent could act on.
+  superseded_probe:
+    probed: '2026-08-17'
+    url: https://genesis-energy.com/llms.txt
+    http_status: 200
+    content_type: text/plain
+    bytes: 65
+    verdict: wrong-host-parked-domain
+    note: >-
+      genesis-energy.com is not owned by Genesis Energy, L.P. It answers 200 with a
+      114-byte lander-redirect HTML for every path, and served robots.txt directives
+      ("User-agent: * / Allow: / / Disallow-Training: / / Sitemap: /sitemap.xml") at
+      /llms.txt. Not a Genesis Energy document.

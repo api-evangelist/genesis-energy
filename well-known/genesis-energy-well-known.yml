@@ -1,0 +1,179 @@
+generated: '2026-09-12'
+method: probed
+source: live HTTPS probes of every host this record knows
+note: >-
+  Recorded absence. Genesis Energy, L.P. serves no /.well-known/ discovery document on any
+  host it controls. NO WellKnown / SecurityTxt pointer is emitted in apis.yml — the probe
+  documents an absence, not a presence.
+hit_count: 0
+hosts:
+  - host: https://www.genesisenergy.com
+    note: >-
+      Corporate site (Drupal). This is the REAL Genesis Energy, L.P. host — the apis.yml
+      Website pointer previously named www.genesis-energy.com, a parked domain owned by
+      someone else (see the last hosts[] entry).
+    path_echo_control: passed
+    soft_404_control:
+      path: /.well-known/genesis-energy-negative-control-7f3ab91c.json
+      status: 404
+      bytes: 26202
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 404
+        file: null
+      - path: /.well-known/ucp.json
+        status: 404
+        file: null
+      - path: /.well-known/acp.json
+        status: 404
+        file: null
+      - path: /.well-known/apis.json
+        status: 404
+        file: null
+      - path: /apis.json
+        status: 404
+        file: null
+      - path: /apis.yml
+        status: 404
+        file: null
+  - host: https://gas.genlp.com
+    note: >-
+      FERC informational posting website (Quorum IPWS) for High Island Offshore System,
+      L.L.C., a Genesis Energy subsidiary. genlp.com is Genesis Energy, L.P.'s own domain
+      (www.genlp.com 301s to www.genesisenergy.com).
+    path_echo_control: passed
+    soft_404_control:
+      path: /.well-known/genesis-energy-negative-control-7f3ab91c.json
+      status: 404
+      bytes: 1245
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 404
+        file: null
+      - path: /.well-known/apis.json
+        status: 404
+        file: null
+      - path: /apis.json
+        status: 404
+        file: null
+  - host: https://quorum.genlp.com
+    note: >-
+      "Customer Activities" system linked from the IPWS. Cloudflare-fronted; returns an
+      empty HTTP 404 for every path including the site root — the application entry point
+      is not publicly linked. Gated customer surface, no discovery documents.
+    path_echo_control: passed
+    soft_404_control:
+      path: /.well-known/genesis-energy-negative-control-7f3ab91c.json
+      status: 404
+      bytes: 0
+    documents:
+      - path: /.well-known/security.txt
+        status: 404
+        file: null
+      - path: /.well-known/openid-configuration
+        status: 404
+        file: null
+      - path: /.well-known/oauth-authorization-server
+        status: 404
+        file: null
+      - path: /.well-known/oauth-protected-resource
+        status: 404
+        file: null
+      - path: /.well-known/api-catalog
+        status: 404
+        file: null
+      - path: /.well-known/ai-plugin.json
+        status: 404
+        file: null
+      - path: /.well-known/agent-card.json
+        status: 404
+        file: null
+      - path: /.well-known/agent.json
+        status: 404
+        file: null
+      - path: /.well-known/aauth-resource.json
+        status: 404
+        file: null
+      - path: /.well-known/apis.json
+        status: 404
+        file: null
+      - path: /apis.json
+        status: 404
+        file: null
+  - host: https://www.genesis-energy.com
+    note: >-
+      NOT GENESIS ENERGY, L.P. — a parked domain. Every path, including the negative
+      control, returns HTTP 200 with a 114-byte HTML lander redirect. Every "200" on this
+      host is a catch-all, not a document. This host was the apis.yml Website and LlmsText
+      pointer target until this pass; both have been corrected/removed.
+    path_echo_control: failed
+    soft_404_control:
+      path: /.well-known/genesis-energy-negative-control-7f3ab91c.json
+      status: 200
+      bytes: 114
+      body: '<!DOCTYPE html><html><head><script>window.onload=function(){window.location.href="/lander"}</script></head></html>'
+    documents:
+      - path: /.well-known/security.txt
+        status: 200
+        file: null
+        verdict: catch-all-lander
+      - path: /.well-known/api-catalog
+        status: 200
+        file: null
+        verdict: catch-all-lander
+      - path: /.well-known/agent-card.json
+        status: 200
+        file: null
+        verdict: catch-all-lander
+      - path: /apis.json
+        status: 200
+        file: null
+        verdict: catch-all-lander
