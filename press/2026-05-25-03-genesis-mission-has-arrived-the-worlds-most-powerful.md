@@ -1,7 +1,9 @@
 ---
 title: Genesis Mission has arrived. The world's most powerful ...
 url: https://www.facebook.com/energy/posts/genesis-mission-has-arrivedthe-worlds-most-powerful-scientific-platform-to-ever-/1149584817331006/
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Genesis Energy" press release artificial intelligence'
 position: 3
 source: serpapi-google

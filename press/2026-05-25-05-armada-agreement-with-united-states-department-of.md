@@ -1,7 +1,9 @@
 ---
 title: Armada Agreement with United States Department of ...
 url: https://www.prnewswire.com/news-releases/armada-agreement-with-united-states-department-of-energy-to-accelerate-genesis-mission-302646196.html
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Genesis Energy" press release artificial intelligence'
 position: 5
 source: serpapi-google

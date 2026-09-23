@@ -1,7 +1,9 @@
 ---
 title: Energy Department Announces Collaboration Agreements ...
 url: https://www.energy.gov/articles/energy-department-announces-collaboration-agreements-24-organizations-advance-genesis
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Genesis Energy" press release artificial intelligence'
 position: 1
 source: serpapi-google
