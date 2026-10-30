@@ -64,35 +64,82 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Genesis Energy is a diversified midstream energy master limited partnership with a focus on providing services to refineries, crude oil and natural gas producers, and industrial and commercial enterprises.
+Genesis Energy, L.P. (NYSE: GEL) is a diversified midstream energy master limited partnership headquartered in Houston, Texas. It operates offshore crude oil and natural gas pipelines and platforms in the Gulf of Mexico, onshore pipelines and terminals, marine transportation for refined products and crude, and a sulfur services and soda ash (alkali) chemicals business serving refineries, producers, and industrial and commercial customers. It is a pipeline and chemicals operator, not a software vendor: it publishes no developer program, no API and no machine-readable API contract. Its only public machine-readable surface is the FERC-mandated informational posting website it runs for its interstate natural gas pipeline, which serves NAESB WGQ-shaped location and capacity data as anonymous file downloads.
 
-**URL:** [Visit APIs.json URL](https://raw.githubusercontent.com/api-evangelist/genesis-energy/refs/heads/main/apis.yml)
+**Areas:** Energy · Midstream · Oil and Gas · Pipelines · Natural Gas · Crude Oil · Marine Transportation · Soda Ash
 
-## Scope
+## Genesis Energy on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Genesis Energy is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/genesis-energy/](https://apis.io/providers/genesis-energy/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### Published properties
 
-- Energy, Midstream, Oil and Gas
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## Timestamps
+#### Security (1)
 
-- **Created:** 2026-03-24
-- **Modified:** 2026-04-28
+Authentication, trust centre, and vulnerability disclosure.
 
-## APIs
+- [Genesis Energy Domain Security](https://apis.io/security/genesis-energy/genesis-energy-domain-security/)
 
-No public APIs have been documented yet. Check back for updates.
+## Where to find this API
 
-## Common Properties
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
-- [Website](https://www.genesis-energy.com)
+- [Website](https://www.genesisenergy.com)
+- [Support](https://www.genesisenergy.com/contact)
+- [Terms of service](https://www.genesisenergy.com/terms-and-conditions)
+- [Privacy policy](https://www.genesisenergy.com/privacy-policy)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
+**Kin Score 11.1** — emerging · rubric 0.24.0 · scored 2026-10-17
 
-**Email:** kin@apievangelist.com
+| Facet | Score |
+|---|---|
+| Discoverability | 55.4 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 4.8 |
+| Access clarity | 21.1 |
+
+**Agent readiness 2.9** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | yes |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 15.6** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/genesis-energy/](https://apis.io/providers/genesis-energy/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Genesis Energy: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/genesis-energy/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
